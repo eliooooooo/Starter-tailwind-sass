@@ -1,0 +1,19 @@
+{
+  "name": "time-manager",
+  "private": true,
+  "scripts": {
+    "prod": "node ./esbuild/esbuild.prod.js",
+    "build": "node ./esbuild/esbuild.build.js",
+    "watch": "node ./esbuild/esbuild.watch.js"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "esbuild": "^0.19.11",
+    "esbuild-plugin-postcss2": "^0.1.2",
+    "esbuild-style-plugin": "^1.6.3",
+    "postcss": "^8.4.33",
+    "postcss-import": "^16.0.0",
+    "sass": "^1.69.7",
+    "tailwindcss": "^3.4.0"
+  }
+}
