@@ -1,5 +1,5 @@
 {
-  "name": "time-manager",
+  "name": "new-project",
   "private": true,
   "scripts": {
     "clean": "rm -rf ./dist",
