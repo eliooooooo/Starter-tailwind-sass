@@ -1,6 +1,10 @@
+/* import styles de base Tailwind */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* import des feuilles de style */
+@import './base.scss';
 
 body {
     background: #000;

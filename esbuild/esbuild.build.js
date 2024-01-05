@@ -24,22 +24,71 @@
 //     .then(result => { console.log('Js & css minifiés !!') })
 //     .catch(() => process.exit(1))
 
-const esbuild = require('esbuild');
-const postcssPlugin = require('esbuild-plugin-postcss2').default;
 
-const postcssImport = require('postcss-import');
-const tailwindcss = require('tailwindcss');
-const autoprefixer = require('autoprefixer');
+// const postCssPlugin = require('esbuild-style-plugin');
+// const sassPlugin = require('esbuild-sass-plugin').default;
 
-esbuild.build({
-    entryPoints: ['src/js/main.js'],
-    bundle: true,
-    outdir: 'dist',
-    plugins: [postcssPlugin({
-        plugins: [
-            postcssImport(),
-            tailwindcss(),
-            autoprefixer(),
-        ],
-    })],
-}).catch(() => process.exit(1));
+// require('esbuild')
+//   .build({
+//     logLevel: 'debug',
+//     entryPoints: ['src/js/main.js'],
+//     outdir: 'dist',
+//     bundle: true,
+//     minify: false,
+//     plugins: [
+//       sassPlugin(),
+//       postCssPlugin({
+//         postcss: {
+//           plugins: [require('tailwindcss'), require('autoprefixer')],
+//         },
+//       }),
+//     ],
+//   })
+//   .then(result => { console.log('Js & css minifiés !!') })
+//   .catch(() => process.exit(1))
+
+const postCssPlugin = require("esbuild-style-plugin");
+
+module.exports = {
+  get: function() {
+    return {
+      logLevel: "debug",
+      entryPoints: ["./src/js/main.js"],
+      outdir: "dist",
+      bundle: true,
+      minify: false,
+      loader: {
+        ".svg": "file",
+        ".otf": "file",
+        ".eot": "file",
+        ".woff": "file",
+        ".woff2": "file"
+      },
+      plugins: [
+        postCssPlugin({
+          postcss: {
+            plugins: [
+              require("postcss-import"),
+              require("tailwindcss/nesting"),
+              require("tailwindcss"),
+              require("autoprefixer")],
+          },
+        }),
+      ],
+    };
+  }
+}
+
+const esbuild = require("esbuild");
+const ctx = require("./esbuild.build.js").get();
+
+async function build() {
+  const context = await esbuild.context(ctx);
+
+  await context
+    .rebuild()
+    .then(result => { console.log('Js & css minifiés !!') })
+    .then(() => process.exit(1))
+}
+
+build();
