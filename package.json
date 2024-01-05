@@ -2,20 +2,19 @@
   "name": "time-manager",
   "private": true,
   "scripts": {
+    "clean": "rm -rf ./dist",
     "prod": "node ./esbuild/esbuild.prod.js",
     "build": "node ./esbuild/esbuild.build.js",
-    "watch": "node ./esbuild/esbuild.watch.js"
+    "watch": "node ./esbuild/esbuild.watch.js",
+    "rebuild" : "rm -rf ./node_modules && rm -rf package-lock.json && npm install && npm run build"
   },
   "dependencies": {
-    "esbuild": "^0.19.11",
-    "esbuild-sass-plugin": "^2.16.1"
+    "esbuild": "^0.19.11"
   },
   "devDependencies": {
+    "tailwindcss": "^3.4.0",
     "autoprefixer": "^10.4.16",
-    "esbuild-plugin-postcss2": "^0.1.2",
-    "esbuild-style-plugin": "^1.6.3",
     "postcss-import": "^16.0.0",
-    "sass": "^1.69.7",
-    "tailwindcss": "^3.4.0"
+    "esbuild-style-plugin": "^1.6.3"
   }
 }

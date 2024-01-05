@@ -6,6 +6,3 @@
 /* import des feuilles de style */
 @import './base.scss';
 
-body {
-    background: #000;
-}

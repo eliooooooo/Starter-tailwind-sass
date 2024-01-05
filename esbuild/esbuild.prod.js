@@ -1,22 +1,30 @@
-const sassPlugin = require('esbuild-sass-plugin').default;
-const postcss = require('esbuild-plugin-postcss');
+const esbuild = require("esbuild");
+const postCssPlugin = require("esbuild-style-plugin");
 
-require("esbuild")
-    .build({
-        logLevel: "debug",
-        entryPoints: ["./src/assets/js/main.js"],
-        bundle: true,
-        outdir: './dist',
-        loader: {
-            '.svg': 'file',
-            '.ttf': 'file',
-        },
-        minify: true,
-        plugins: [sassPlugin(), postcss.default({
-            plugins: [
-                require('autoprefixer'),
-            ],
-        })],
-    })
-    .then(result => { console.log('Js & css minifiés !!') })
-    .catch(() => process.exit(1))
+esbuild.build({
+  logLevel: "debug",
+  entryPoints: ["./src/js/main.js"],
+  outdir: "dist",
+  bundle: true,
+  minify: true,
+  loader: {
+    // ".svg": "file",
+    // ".otf": "file",
+    // ".eot": "file",
+    // ".woff": "file",
+    // ".woff2": "file"
+  },
+  plugins: [
+    postCssPlugin({
+      postcss: {
+        plugins: [
+          require("postcss-import"),
+          require("tailwindcss/nesting"),
+          require("tailwindcss"),
+          require("autoprefixer")],
+      },
+    }),
+  ],
+})
+.then(result => { console.log('Js & css minifiés !!') })
+.catch(() => process.exit(1));
