@@ -6,7 +6,7 @@ esbuild.build({
   entryPoints: ["./src/js/main.js"],
   outdir: "dist",
   bundle: true,
-  minify: false,
+  minify: false, 
   loader: {
     // ".svg": "file",
     // ".otf": "file",

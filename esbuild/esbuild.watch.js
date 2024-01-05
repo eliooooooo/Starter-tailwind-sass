@@ -6,7 +6,7 @@ const postCssPlugin = require('esbuild-style-plugin');
     logLevel: 'debug',
     entryPoints: ['./src/js/main.js'],
     outdir: 'dist',
-    bundle: true,
+    bundle: true, 
     minify: false,
     loader: {
       '.svg': 'file',

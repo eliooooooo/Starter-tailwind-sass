@@ -36,4 +36,4 @@ npm run rebuild
 ```
 <br />
 <br />
-Fell free to contribute to the project - every improvement is welcome! 😀
+Fell free to contribute to the project - every improvement is welcome! 😀 
