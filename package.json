@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "esbuild": "^0.19.11"
+    "alpinejs": "^3.13.3",
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",
