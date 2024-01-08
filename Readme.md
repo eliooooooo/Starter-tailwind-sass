@@ -2,13 +2,14 @@
 
 This is a Sass and TailwindCSS starter pack. It can be use with with any other technology.   
 If you change the tree structure, remember to update the links in the `esbuild` files and `tailwind.config.js`.  
-This package also contain `Alpinejs`. The `lando` environnement should be configured and ready to use.
+This package also contain `Alpinejs`.  
+The `lando` environnement should be configured and ready to use.
 
 ## Requirements
 
 This package is configurated for an WSL environnement. (https://learn.microsoft.com/en-us/windows/wsl/install)  
-To use the `lando` feature, you have to install lando and docker in your environnement. (https://lando.dev/download)
-The package is using npm, so you need a nodejs installation. (https://nodejs.org/en)
+To use the `lando` feature, you have to install lando and docker in your environnement. (https://lando.dev/download)  
+The package is using npm, so you need a nodejs installation. (https://nodejs.org/en)  
 
 ## Getting Started
 
