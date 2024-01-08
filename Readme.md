@@ -6,7 +6,7 @@ This package also contain `Alpinejs`. The `lando` environnement should be config
 
 ## Requirements
 
-This package is configurated for an WSL environnement. (https://learn.microsoft.com/en-us/windows/wsl/install)
+This package is configurated for an WSL environnement. (https://learn.microsoft.com/en-us/windows/wsl/install)  
 To use the `lando` feature, you have to install lando and docker in your environnement. (https://lando.dev/download)
 The package is using npm, so you need a nodejs installation. (https://nodejs.org/en)
 
