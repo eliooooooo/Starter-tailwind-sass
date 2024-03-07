@@ -1,6 +1,6 @@
 # Discover the TailwindCSS/Sass Starter pack
 
-This is a Sass and TailwindCSS starter pack. It can be use with with any other technology.   
+This is a Sass and TailwindCSS starter pack. It can be used with with any other technology.   
 If you change the tree structure, remember to update the links in the `esbuild` files and `tailwind.config.js`.  
 This package also contain `Alpinejs`.  
 The `lando` environnement should be configured and ready to use.
